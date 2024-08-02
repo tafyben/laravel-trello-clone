@@ -4,7 +4,7 @@ use App\Livewire\BoardShow;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
-Route::get('/boards/{board}', BoardShow::class);
+Route::get('/boards/{board}', BoardShow::class)->middleware(['auth']);
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
