@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="p-3 space-y-1.5 overflow-y-scroll">
-            @foreach(range(1, 20) as $card)
+            @foreach(range(1, random_int(1, 30)) as $card)
                 <livewire:card/>
             @endforeach
         </div>
