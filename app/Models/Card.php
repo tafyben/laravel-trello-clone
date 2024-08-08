@@ -9,7 +9,8 @@ class Card extends Model
 {
     use HasFactory;
 
-    public function cards(){
-        return $this->hasMany(Card::class);
+    public function column()
+    {
+        return $this->belongsTo(Column::class);
     }
 }
