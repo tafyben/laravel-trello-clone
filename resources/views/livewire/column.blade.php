@@ -1,4 +1,4 @@
-    <div class="bg-white self-start shrink-0 rounded-lg shadow-sm max-h-full w-[260px]">
+    <div class="bg-white self-start shrink-0 rounded-lg shadow-sm max-h-full w-[260px] flex flex-col">
         <div class="flex items-center justify-between">
             <div
                 x-data="{editing:false}"
@@ -8,7 +8,7 @@
                 <button
                     x-on:click="editing = true"
                     x-show="!editing"
-                    class="text-left w-full"
+                    class="text-left w-full font-medium"
                 >
                     Column title
                 </button>
@@ -32,7 +32,11 @@
                 </x-dropdown>
             </div>
         </div>
-        <div></div>
+        <div class="p-3 space-y-1.5 overflow-y-scroll">
+            @foreach(range(1, 20) as $card)
+                <livewire:card/>
+            @endforeach
+        </div>
         <div></div>
 
     </div>
