@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('columns', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('board_idn')->constrained();
+            $table->foreignId('board_id')->constrained();
             $table->string('title');
             $table->unsignedInteger('order');
             $table->timestamps();
