@@ -10,7 +10,7 @@
                     x-show="!editing"
                     class="text-left w-full font-medium"
                 >
-                    Column title
+                    {{$column->title}}
                 </button>
                 <template x-if="editing">
                     <form class="-ml-[calc(theme('margin[1.5]')+1px)] grow">
