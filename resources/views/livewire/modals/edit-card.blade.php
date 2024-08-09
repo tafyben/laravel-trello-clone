@@ -1,3 +1,3 @@
 <div>
-    Edit card
+    {{$card->title}}
 </div>
