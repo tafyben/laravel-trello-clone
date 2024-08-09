@@ -21,6 +21,4 @@
             </x-secondary-button>
         </div>
     </form>
-
-    {{$card->title}}
 </x-modal-wrapper>

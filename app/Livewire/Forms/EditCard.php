@@ -11,4 +11,7 @@ class EditCard extends Form
     #[Validate('required')]
     public string $title = '';
 
+    #[Validate('required')]
+    public ?string $notes = '';
+
 }
