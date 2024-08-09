@@ -1,3 +1,5 @@
-<div>
-    {{-- Do your work, then step back. --}}
-</div>
+<x-modal-wrapper title="Archived cards">
+
+    Card Archive
+
+</x-modal-wrapper>
