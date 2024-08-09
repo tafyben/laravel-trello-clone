@@ -35,6 +35,9 @@ class BoardShow extends Component
             });
         });
     }
+    public function createColumn(){
+
+    }
 
     #[Layout('layouts.app')]
     public function render()
