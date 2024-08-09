@@ -23,4 +23,8 @@ class Card extends Model implements Sortable
     {
         return $this->belongsTo(Column::class);
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
