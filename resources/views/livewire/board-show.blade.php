@@ -6,6 +6,7 @@
                 {{ $board->title }}
             </h2>
 
+            <!-- archived cards button start -->
             <x-dropdown>
                 <x-slot name="trigger">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
@@ -18,8 +19,13 @@
                         x-on:click="Livewire.dispatch('openModal', {component: 'modals.card-archive',arguments: {board: {{$board->id}}}})">
                         Archived cards
                     </x-dropdown-button>
+                    <x-dropdown-button
+                        x-on:click="Livewire.dispatch('openModal', {component: 'modals.column-archive',arguments: {board: {{$board->id}}}})">
+                        Archived columns
+                    </x-dropdown-button>
                 </x-slot>
             </x-dropdown>
+            <!-- archived columns button end -->
         </div>
 
     </x-slot>
