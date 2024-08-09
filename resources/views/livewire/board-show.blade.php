@@ -28,7 +28,8 @@
                     <form wire:submit="createColumn" class="bg-gray-200 shadow-sm px-4 py-3 rounded-lg w-[260px]">
                         <div>
                             <x-input-label for="title" value="Title" class="sr-only"/>
-                            <x-text-input id="title" placeholder="Column title" class="w-full"/>
+                            <x-text-input id="title" placeholder="Column title" class="w-full" wire:model="createColumnForm.title"/>
+                            <x-input-error :messages="$errors->get('createColumnForm.title')" class="mt-1" />
                         </div>
 
                         <!-- create and cansel buttons -->

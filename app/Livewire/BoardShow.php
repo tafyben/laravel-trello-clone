@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Forms\CreateColumn;
 use App\Models\Board;
 use Illuminate\Database\Eloquent\Builder;
 use Livewire\Attributes\Layout;
@@ -10,6 +11,8 @@ use Livewire\Component;
 class BoardShow extends Component
 {
     public Board $board;
+    public CreateColumn $createColumnForm;
+
     public function mount(){
         $this->authorize('show',$this->board);
     }
@@ -35,8 +38,9 @@ class BoardShow extends Component
             });
         });
     }
-    public function createColumn(){
 
+    public function createColumn(){
+        $this->createColumnForm->validate();
     }
 
     #[Layout('layouts.app')]
