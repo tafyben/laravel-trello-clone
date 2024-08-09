@@ -10,7 +10,15 @@ class ColumnArchive extends ModalComponent
 {
     public Board $board;
 
+    public function unarchiveColumn($id){
+        $column = $this->board->columns->find($id);
 
+        $column->update([
+            'archived_at' => null
+        ]);
+
+        $this->dispatch('board-updated');
+    }
 
     public function render()
     {

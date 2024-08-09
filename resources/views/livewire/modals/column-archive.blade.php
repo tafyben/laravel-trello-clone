@@ -6,7 +6,9 @@
                 <div>
                     {{$column->title}}
                 </div>
-                <button class="text-sm text-gray-500">
+                <button class="text-sm text-gray-500"
+                        wire:click="unarchiveColumn({{ $column->id }})"
+                >
                     Put back
                 </button>
             </div>
