@@ -22,13 +22,15 @@
             {{-- a column button --}}
             <div
                 x-data="{adding: false}"
+                x-on:column-created.window="adding = false"
             >
                 <template x-if="adding">
                     {{-- form to show when button is clicked --}}
                     <form wire:submit="createColumn" class="bg-gray-200 shadow-sm px-4 py-3 rounded-lg w-[260px]">
                         <div>
                             <x-input-label for="title" value="Title" class="sr-only"/>
-                            <x-text-input id="title" placeholder="Column title" class="w-full" wire:model="createColumnForm.title"/>
+                            <x-text-input id="title" placeholder="Column title" class="w-full"
+                                          wire:model="createColumnForm.title" x-init="$el.focus()"/>
                             <x-input-error :messages="$errors->get('createColumnForm.title')" class="mt-1" />
                         </div>
 

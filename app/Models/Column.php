@@ -11,6 +11,7 @@ class Column extends Model implements Sortable
 {
     use SortableTrait;
     use HasFactory;
+    protected $guarded = [];
 
     public $sortable = [
         'order_column_name' => 'order',
@@ -20,5 +21,9 @@ class Column extends Model implements Sortable
     public function cards()
     {
         return $this->hasMany(Card::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

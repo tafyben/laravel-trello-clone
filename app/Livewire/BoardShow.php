@@ -20,7 +20,7 @@ class BoardShow extends Component
     public function sorted(array $items){
         $order = collect($items)->pluck('value')->toArray();
         \App\Models\Column::setNewOrder($order,1,'id', function (Builder $query){
-            $query->where('user_id', auth()->id());
+            $query->whereBelongsTo( auth()->user());
         });
     }
 
@@ -41,11 +41,15 @@ class BoardShow extends Component
 
     public function createColumn(){
         $this->createColumnForm->validate();
+        $column = $this->board->columns()->make($this->createColumnForm->only('title'));
+        $column->user()->associate(auth()->user());
+        $column->save();
+        $this->createColumnForm->reset();
+        $this->dispatch('column-created');
     }
 
     #[Layout('layouts.app')]
-    public function render()
-    {
+    public function render(){
         return view('livewire.board-show', [
             'columns' => $this->board->columns()->ordered()->get(),
         ]);
