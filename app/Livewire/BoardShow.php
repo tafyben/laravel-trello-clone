@@ -20,6 +20,11 @@ class BoardShow extends Component
             $query->where('user_id', auth()->id());
         });
     }
+
+    public function moved(array $items){
+        dd($items);
+    }
+
     #[Layout('layouts.app')]
     public function render()
     {
