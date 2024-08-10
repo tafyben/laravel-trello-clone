@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome');
 Route::get('/boards/{board}', BoardShow::class)->middleware(['auth']);
 
-Route::view('dashboard', 'dashboard')
+Route::get('/dashboard', \App\Livewire\BoardIndex::class)
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
