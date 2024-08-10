@@ -20,7 +20,7 @@ class CardPolicy
         return $user->id == $card->user_id;
     }
 
-    public function  archive(User $user, Card $card){
+    public function archive(User $user, Card $card){
         return $user->id == $card->user_id;
     }
 }

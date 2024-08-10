@@ -18,7 +18,7 @@ class ColumnPolicy
         return $user->id == $column->user_id;
     }
 
-    public function  archive(User $user, Column $column){
+    public function archive(User $user, Column $column){
         return $user->id == $column->user_id;
     }
 }
