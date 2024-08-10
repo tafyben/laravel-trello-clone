@@ -21,4 +21,8 @@ class ColumnPolicy
     public function archive(User $user, Column $column){
         return $user->id == $column->user_id;
     }
+
+    public function createCard(User $user, Column $column){
+        return $user->id == $column->user_id;
+    }
 }

@@ -44,6 +44,9 @@ class BoardShow extends Component
     }
 
     public function createColumn(){
+
+        $this->authorize('createColumn', $this->board);
+
         $this->createColumnForm->validate();
         $column = $this->board->columns()->make($this->createColumnForm->only('title'));
         $column->user()->associate(auth()->user());
