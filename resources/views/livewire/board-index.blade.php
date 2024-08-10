@@ -7,11 +7,11 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-6">
            @foreach($boards as $board)
-                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg
+                <a href="{{route('boards.show', $board)}}" class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg
                 h-40 flex lg:items-end p-6 text-gray-900 text-lg"
                 >
                     {{$board->title}}
-                </div>
+                </a>
            @endforeach
 
             <button class="bg-gray-200 dark:bg-gray-800 overflow-hidden shadow-sm

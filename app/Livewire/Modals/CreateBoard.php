@@ -12,7 +12,7 @@ class CreateBoard extends ModalComponent
     public function createBoard(){
         $this->createBoardForm->validate();
 
-        $board = auth()->user()->boards()->create($this->createBoardForm->only('title'));
+        $board =  auth()->user()->boards()->create($this->createBoardForm->only('title'));
 
         return redirect()->route('boards.show', $board);
     }
