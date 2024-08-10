@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Models\Column;
 use App\Models\User;
 
 class ColumnPolicy
@@ -12,5 +13,13 @@ class ColumnPolicy
     public function __construct()
     {
         //
+    }
+
+    public function update(User $user, Column $column){
+        return $user->id == $column->user_id;
+    }
+
+    public function archive(User $user, Column $column){
+        return $user->id == $column->user_id;
     }
 }
